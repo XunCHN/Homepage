@@ -1,137 +1,182 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>Xun Jiang</title>
-  
-  <meta name="author" content="Xun Jiang">
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+
+  <title>Xun Jiang's Homepage</title>
+
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
-  <link rel="icon" type="image/png" href="image/favicon.ico">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- <meta name="description" content="Lei Wang will be a full-time research scientist at Salesforce AI Research"> -->
+  <meta name="keywords" content="Xun Jiang, Multimedia Retrieval, Multimodal Learning, Long-term Video Understanding, and Weakly-Supervised Learning">
+  <meta name="author" content="Xun Jiang" />
+
+  <link rel="stylesheet" href="w3.css">
+
+  <style>
+  .w3-sidebar a {font-family: "Roboto", sans-serif}
+  body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
+  </style>
+
+  <link rel="icon" type="image/png" href="images/favicon.ico">
+  <!--
+  <script src="jquery.min.js"></script>
+  <script>
+  $(document).ready(function(){
+    // Add smooth scrolling to all links
+    $("a").on('click', function(event) {
+      // Make sure this.hash has a value before overriding default behavior
+      if (this.hash !== "") {
+        // Prevent default anchor click behavior
+        event.preventDefault();
+        // Store hash
+        var hash = this.hash;
+        // Using jQuery's animate() method to add smooth page scroll
+        // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 800, function(){
+          // Add hash (#) to URL when done scrolling (default click behavior)
+          window.location.hash = hash;
+        });
+      } // End if
+    });
+  });
+  </script>
+  //-->
+
 </head>
 
-  <body>
-  <table width="950" border="0" align="center" cellspacing="0" cellpadding="0">
-    <tr>
-    <td>
-      <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-      <tr>
-        <td width="67%" valign="middle">
-        <p align="center">
-          <name>Xun Jiang &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		  </name>
+
+<body class="w3-content" style="max-width:1000px">
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-bar-block w3-blue-grey w3-collapse w3-top w3-right" style="z-index:3;width:150px" id="mySidebar">
+  <div class="w3-container w3-display-container w3-padding-16">
+    <h3><b><p style="text-align: center;">Xun</p></b></h3>
+  </div>
+  <div class="w3-padding-64 w3-text-light-grey w3-large" style="font-weight:bold">
+    <a href="#home" class="w3-bar-item w3-button">Home</a>
+    <a href="#news" class="w3-bar-item w3-button">News</a>
+    <a href="#education" class="w3-bar-item w3-button">Education</a>
+    <!-- <a href="#projects" class="w3-bar-item w3-button">Projects</a>
+    <a href="#talks" class="w3-bar-item w3-button">Talks</a> -->
+    <a href="#publications" class="w3-bar-item w3-button">Publications</a>
+    <!-- <a href="#service" class="w3-bar-item w3-button">Services</a> -->
+    <a href="#award" class="w3-bar-item w3-button">Awards</a>
+  </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-bar w3-top w3-hide-large w3-blue-grey w3-xlarge">
+  <div class="w3-bar-item w3-padding-24">DemoLei</div>
+  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-24 w3-right"  style="font-stretch: extra-expanded;" onclick="w3_open()"><b>≡</b></a>
+  </div>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:150px">
+
+  <!-- Push down content on small screens -->
+  <div class="w3-hide-large" style="margin-top:83px"></div>
+
+<!-- The Home Section -->
+    <div class="w3-container w3-center w3-padding-32" id="home">
+      <img style="width: 80%;max-width: 320px" alt="profile photo" src="images/xun_jiang.png">
+      <h1>Xun Jiang</h1>
+        <p class="w3-justify" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;max-width:600px">
+          I am a second-year Ph.D student in Successive Postgraduate and Doctoral Program at <a href="http://cfm.uestc.edu.cn">CFM lab</a> of the University of Electronic and Science of China (UESTC), supervised by <a href="https://cfm.uestc.edu.cn/~shenht/">Prof. Heng Tao Shen</a>, co-supervised by <a href="https://cfm.uestc.edu.cn/~fshen/">Prof. Fumin Shen</a> and <a href="https://interxuxing.github.io/">Prof. Xing Xu</a>. Before that, I earned my bachelor's degree in Software Engineering from UESTC in 2020, where I was recognized as an Honor Graduate. 
         </p>
-
-        <p align=center>
-          <a href="https://scholar.google.com/citations?user=oAjQIUEAAAAJ">Google Scholar</a>
-          &nbsp/&nbsp
-          <a href="https://github.com/CFM-MSG/">Github&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a> 
+        <p class="w3-justify" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;max-width:600px">
+          My research interests include, but are not limited to, Multimedia Retrieval, Multimodal Learning, Long-term Video Understanding, and Weakly-Supervised Learning. Currently, I am serving as a Journal Reviewer/PC Member for IEEE TIP, IEEE TCSVT, ACM TOMM, CVPR, ACM MM, AAAI, ICME, ICMR, and ACPR. 
         </p>
-		<p> I am a second-year Ph.D student in Successive Postgraduate and Doctoral Program at <a href="http://cfm.uestc.edu.cn">CFM lab</a> of the University of Electronic and Science of China (UESTC), supervised by <a href="https://cfm.uestc.edu.cn/~shenht/">Prof. Heng Tao Shen</a>, co-supervised by <a href="https://cfm.uestc.edu.cn/~fshen/">Prof. Fumin Shen</a> and <a href="https://interxuxing.github.io/">Prof. Xing Xu</a>. Before that, I obtained my bachelor degree in Department of Software Engineering from UESTC in 2020 and was awarded as Honor Graduates of UESTC. I also won the Best Student Paper in ICME 2022. 
-		</p>
-
-    <p> My research interests include but are not limited to Multimedia Retrieval, Multimodal Learning, Long-term Video Understanding, and Weakly-Supervised Learning. Now I am serving as Journal Reviewer/PC Member for IEEE TIP, IEEE TCSVT, ACM TOMM, CVPR, ACM MM, AAAI, ICME, ICMR, and ACPR. 
-    </p>
-
-    <p>I am always glad to academic exchange, please feel free to contact me if you are interested in my research topic. Email: xun_jiang@outlook.com 
-    </p>
-
-
-
-
-        </td>
-        <td width="33%">
-        <img src="image/xun_jiang.png" width="210">
-        </td>
-      </tr>
-      </table>
+        <p class="w3-justify" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;max-width:600px">
+          I am always glad to engage in academic exchange. Please feel free to contact me if you are interested in my research topic. 
+        </p>
+        <p class="w3-justify" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;max-width:600px">
+          Email: xun_jiang@outlook.com 
+        </p>
+        <!-- <p class="w3-justify" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;max-width:600px">
+          I am expected to graduate in May 2024. After graduation, I will be joining Salesforce Research in Singapore as a full-time research scientist. 
+        </p> -->
+        <p class="w3-center">
+          <a href="https://scholar.google.com/citations?user=oAjQIUEAAAAJ">Google Scholar</a> &nbsp/&nbsp
+          <a href="https://github.com/CFM-MSG/"> GitHub </a>
+        </p>
+        </tbody></table>
+  </div>
 
 
-<p></p><p></p><p></p><p></p><p></p>
-<table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-      <tr>
-        <td width="100%" valign="middle">
-          <heading>News</heading>
-          <p>
-		  <li> <strongsmall>[2024/03]</strongsmall> &nbsp;&nbsp;<smalll>2 papers about multimodal fusion and video content retrieval are accepted by ICME 2024! Congratulations to my co-authors Zixian and Liqin!</smalll><br/>
-		  <li> <strongsmall>[2024/03]</strongsmall> &nbsp;&nbsp;<smalll>1 paper about uncertainty learning in multimodal fusion are accepted by CVPR 2024!</smalll><br/>
-		  <li> <strongsmall>[2023/10]</strongsmall> &nbsp;&nbsp;<smalll>Received Doctoral National Scholarship!</smalll><br/>
-		  <li> <strongsmall>[2023/08]</strongsmall> &nbsp;&nbsp;<smalll>1 paper co-author with Shenshen Li about composed query based image retrieval is accepted by TCSVT! <br> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp; Congratulations to Shenshen!</smalll><br/>
-		  <li> <strongsmall>[2023/07]</strongsmall> &nbsp;&nbsp;<smalll>2 paper about video content retrieval are accepted by ACM MM 2023!</smalll><br/>
-		  <li> <strongsmall>[2023/03]</strongsmall> &nbsp;&nbsp;<smalll>1 paper about cross-modal untrimmed video retrieval is accepted by ICME 2023!</smalll><br/>
-      <li> <strongsmall>[2022/09]</strongsmall> &nbsp;&nbsp;<smalll>1 paper about video content retrieval is accepted by TNNLS!</smalll><br/>
-		  <!-- <li> <strongsmall>[2022/06]</strongsmall> &nbsp;&nbsp;<smalll>Received 2022 ICME Best Student Paper Award!</smalll><br/> -->
-      <!-- <li> <strongsmall>[2022/06]</strongsmall> &nbsp;&nbsp;<smalll>1 paper about audible video content parsing is accepted by ACM MM 2022!</smalll><br/> -->
-		  <!-- <li> <strongsmall>[2022/03]</strongsmall> &nbsp;&nbsp;<smalll>1 paper about semi-supervised video content understanding is accepted by CVPR 2022!</smalll><br/> -->
-          </p>
-        </td>
-      </tr>
-</table>
-
-
-
-
-      <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-      <tr>
-        <td width="100%" valign="middle">
-          <heading>Education</heading>
-        </td>
-      </tr>
-      </table>
-
+  <div class="w3-container w3-padding-32" id="education">
+    <h2>Education</h2>
       <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
         
 
         <tr>
-          <td width="10%">
-            <img src='image/uestc_icon.jpg' width="100">
+          <td width="20%">
+            <img src='images/uestc_icon.jpg' width="100">
           </td>
-
+    
         <td width="75%" valign="middle">
           <p>
-          <stronghuge>University of Electronic Science and Technology of China (UESTC), China</stronghuge><br />
+          <strong>University of Electronic Science and Technology of China (UESTC), China</strong><br />
           Ph.D. in Computer Science and Technology &nbsp;&nbsp;&nbsp;&nbsp; &bull; Sep. 2020 - Present <br />
           In Successive Postgraduate and Doctoral Program
           </p>
         </td>
         </tr>
-
-
-
+    
+    
+    
         <tr>
-          <td width="10%">
-            <img src='image/uestc_icon.jpg' width="100">
+          <td width="20%">
+            <img src='images/uestc_icon.jpg' width="100">
           </td>
-
+    
         <td width="75%" valign="middle">
           <p>
-          <stronghuge>University of Electronic Science and Technology of China (UESTC), China</stronghuge><br />
+          <strong>University of Electronic Science and Technology of China (UESTC), China</strong><br />
           Bachelor Degree in Software Engineering &nbsp;&nbsp;&nbsp;&nbsp; &bull; Sep. 2016 - Jun. 2020 <br />
           Awarded Honor Graduates of UESTC.
           </p>
         </td>
         </tr>
-	  
+    
       </table>
+  </div> 
 
 
 
 
+<!-- The News Section -->
+  <div class="w3-container w3-light-grey w3-padding-32" id="news">
+   <h2>News</h2>
+      <p><li>[2024/04] 1 paper about zero-shot video moment retrieval is accepted by IEEE TMM!</li></p>
+      <p><li>[2024/04] 1 paper about compositional temporal grounding is accepted by ICMR 2024! Congratulations to Zhuoyuan!</li></p>
+      <p><li>[2024/03] 2 papers about multimodal fusion and video content retrieval are accepted by ICME 2024! Congratulations to my co-authors Zixian and Liqing!</li></p>
+      <p><li>[2024/03] 1 paper about uncertainty learning in multimodal fusion are accepted by CVPR 2024!</li></p>
+      <p><li>[2024/01] 1 paper about composed query based image retrieval is accepted by TOMM! </li></p>
+      <p><li>[2023/08] 1 paper co-author with Shenshen Li about composed query based image retrieval is accepted by TCSVT! Congratulations to Shenshen!</li></p>
+      <p><li>[2023/07] 2 paper about video content retrieval are accepted by ACM MM 2023! </li></p>
+  </div>
 
-<p></p><p></p><p></p><p></p><p></p>
-  
-      <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-      <tr>
-        <td width="100%" valign="middle">
-          <heading>Publication <a href="https://scholar.google.com/citations?user=oAjQIUEAAAAJ" style="font-size:22px;">[Google Scholar]</a></heading>
-        </td>
-      </tr>
-      </table>
 
+ <!-- The Publications Section -->
+  <div class="w3-container w3-padding-32" id="publications">
+    <h2>Publications</h2>
+      <p class="w3-left-align" style="line-height:200%">
+        I'm interested in pushing the boundaries of research in two key areas: large language models and automatic math problem solving.
+      </p>
 
       <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
         <tr onmouseout="aperture_stop()" onmouseover="aperture_start()" >
           <td width="15%">
-            <img src='project/jsg/intro.png'  width="160" height="90">
+            <img src='images/jsg.png'  width="160" height="90">
           </td>
           <td valign="top" width="75%">
        <strong>Joint Searching and Grounding: Multi-Granularity Video Content Retrieval</strong><br>
@@ -141,7 +186,7 @@
        <br>
             <em>ACM Internation Conference on Multimedia, <strong>ACM MM 2023</strong></em><br>
         
-        <a href="https://arxiv.org/abs/2305.14017">[Paperlink]</a>, <a href="https://github.com/CFM-MSG/Code_JSG">[Code]</a><br>
+        <a href="https://dl.acm.org/doi/abs/10.1145/3581783.3612349">[Paperlink]</a>, <a href="https://github.com/CFM-MSG/Code_JSG">[Code]</a><br>
             <em>Area: Multi-Granularity Video Content Retrieval; Video Understanding; Multimodal Learning</em> <br>
             <p></p>
           </td>
@@ -153,7 +198,7 @@
        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
         <tr onmouseout="aperture_stop()" onmouseover="aperture_start()" >
           <td width="15%">
-            <img src='project/cfmr/intro.png'  width="160" height="90">
+            <img src='images/cfmr.png'  width="160" height="90">
           </td>
           <td valign="top" width="75%">
        <strong> Faster Video Moment Retrieval with Point-Level Supervision</strong><br>
@@ -162,7 +207,7 @@
        <br>
             <em>ACM Internation Conference on Multimedia, <strong>ACM MM 2023</strong></em><br>
         
-        <a href="">[Paperlink]</a>, <a href="https://github.com/CFM-MSG/Code_CFMR">[Code]</a><br>
+        <a href="https://dl.acm.org/doi/abs/10.1145/3581783.3612394">[Paperlink]</a>, <a href="https://github.com/CFM-MSG/Code_CFMR">[Code]</a><br>
             <em>Area: Video Content Retrieval; Point-level Supervision; Retrieval Efficiency</em> <br>
             <p></p>
           </td>
@@ -173,7 +218,7 @@
   <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
     <tr onmouseout="aperture_stop()" onmouseover="aperture_start()" >
       <td width="15%">
-        <img src='project/sdn/intro.png'  width="160" height="90">
+        <img src='images/sdn.png'  width="160" height="90">
       </td>
       <td valign="top" width="75%">
 	 <strong>SDN: Semantic Decoupling Network for Temporal Language Grounding</strong><br>
@@ -193,7 +238,7 @@
    <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
     <tr onmouseout="aperture_stop()" onmouseover="aperture_start()" >
       <td width="15%">
-        <img src='project/dhhn/intro.png'  width="160" height="90">
+        <img src='images/dhhn.png'  width="160" height="90">
       </td>
       <td valign="top" width="75%">
 	 <strong>DHHN: Dual Hierarchical Hybrid Network for Weakly-Supervised Audio-Visual Video Parsing</strong><br>
@@ -218,7 +263,7 @@
    <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
     <tr onmouseout="aperture_stop()" onmouseover="aperture_start()" >
       <td width="15%">
-        <img src='project/gtlr/intro.png'  width="160" height="90">
+        <img src='images/gtlr.png'  width="160" height="90">
       </td>
       <td valign="top" width="75%">
 	 <strong>GTLR: Graph-Based Transformer with Language Reconstruction for Video Paragraph Grounding</strong><br>
@@ -238,84 +283,149 @@
       </td>
     </tr>
    </table>
-   
-
-   <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-    <tr onmouseout="aperture_stop()" onmouseover="aperture_start()" >
-      <td width="15%">
-        <img src='project/svptr/intro.png'  width="160" height="90">
-      </td>
-      <td valign="top" width="75%">
-	 <strong>Semi-Supervised Video Paragraph Grounding With Contrastive Encoder</strong><br>
-	 <strong>Xun Jiang</strong>,
-	 Xing Xu,
- 	 Jingran Zhang,    
- 	 Fumin Shen,    
- 	 Zuo Cao,    
- 	 Heng Tao Shen,    
-   <br>
-        <em>IEEE/CVF Conference on Computer Vision and Pattern Recognition, <strong>CVPR 2022</strong></em><br>
-		
-		<a href="https://ieeexplore.ieee.org/document/9879558">[Paperlink]</a>, <a>[Code]</a><br>
-        <em>Area: Video Content Understanding; Weakly-Supervised Learning; Multimodal Learning</em> <br>
-        <p></p>
-      </td>
-    </tr>
-   </table>
-   
+    
+    <!-- <h3><strong>Large Language Models</strong></h3>
+    <div style="background-color: #EEF3FE">
+    <ol>
+      <p>
+        <li><strong>PCToolkit: A Unified Plug-and-Play Prompt Compression Toolkit of Large Language Models</strong>
+        <br>
+        Jinyi Li, Yihuai Lan, <strong>Lei Wang</strong>, Hao Wang
+        <br>
+        <em>Preprint</em> 2024 | <a style="color: #447ec9" href="https://arxiv.org/abs/2403.17411">paper</a> | &nbsp<iframe src="https://ghbtns.com/github-btn.html?user=3DAgentWorld&repo=Toolkit-for-Prompt-Compression&type=star&count=true" frameborder="0" scrolling="0" width="150" height="20" title="GitHub" align="bottom" style="position:absolute;Left:30;bottom:-10"></iframe> 
+      </p>
+    </ol> -->
 
 
+    <!-- <h3><strong>Others</strong> </h3>
+    <div style="background-color: #EEF3FE">
+    <ol>
 
-<p></p><p></p><p></p><p></p><p></p>
-<table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-      <tr>
-        <td width="100%" valign="middle">
-          <heading>Honors & Scholarships</heading>
-          <div style="line-height:25px">
-          <p>
-          <li> <stronghuge>Doctoral National Scholarship</stronghuge>,&nbsp; 2023<br/>
-            <li> <stronghuge>ICME Best Student Paper</stronghuge>,&nbsp; 2022<br/>
-          <li> <stronghuge>Academic New Talent of UESTC</stronghuge>,&nbsp; 2022-2023<br/>
-          <li>  <stronghuge>UESTC Outstanding Postgraduate Scholarship</stronghuge> ,&nbsp; 2020-2022 <br/>
-          <li>  <stronghuge>Honor Graduates of UESTC</stronghuge> ,&nbsp; 2020 <br/>
-          <li> <stronghuge>National Encouragement Scholarship</stronghuge> ,&nbsp; 2018-2019<br/>
-		      <li> <stronghuge>UESTC Outstanding Undergraduate Scholarship</stronghuge> ,&nbsp; 2017~2019<br/>
-          </p>
-          </div>
-        </td>
-      </tr>
-</table>
+      <p>
+      <li><strong>Gradient-Aware Logit Adjustment Loss for Long-Tailed Classifier</strong>
+      <br>
+      Fan Zhang, Wei Qin, Weijieying Ren, <strong>Lei Wang</strong>, Zetong Chen, Richang Hong
+      <br>
+      <em>ICASSP</em> 2024 | <a style="color: #447ec9" href="">paper</a> 
+      </p>
+
+      <p>
+      <li><strong>FlaCGEC: A Chinese Grammatical Error Correction Dataset with Fine-grained Linguistic Annotation</strong>
+      <br>
+      Hanyue Du, Yike Zhao, Qingyuan Tian, Jiani Wang, <strong>Lei Wang</strong>, Yunshi Lan and Xuesong Lu
+      <br>
+      <em>CIKM Resource</em> 2023 | <a style="color: #447ec9" href="https://demoleiwang.github.io/HomePage/">paper</a> | Code and Dataset: Coming Soon.
+      </p>
+
+      <p>
+      <li><strong>A Prompt-Based Topic-Modeling Method for Depression Detection on Low-Resource Data</strong>
+      <br>
+      Yanrong Guo, Jilong Liu, <strong>Lei Wang</strong>, Wei Qin, Shijie Hao, Richang Hong
+      <br>
+      <em>IEEE Transactions on Computational Social Systems</em> 2023 | <a style="color: #447ec9" href="https://ieeexplore.ieee.org/abstract/document/10105271/">paper</a>
+      </p>
+
+      <p>
+      <li><strong>Deepstyle: User style embedding for authorship attribution of short texts</strong>
+      <br>
+      Zhiqiang Hu, Roy Ka-Wei Lee, <strong>Lei Wang</strong>, Ee-peng Lim, Bo Dai.
+      <br>
+      <em>APWeb-WAIM</em> 2020 | <a style="color: #447ec9" href="https://arxiv.org/pdf/2103.11798">paper</a>
+      </p>
+
+      <p>
+      <li><strong>CRAN: a hybrid CNN-RNN attention-based model for text classification</strong>
+      <br>
+      Long Guo, Dongxiang Zhang, <strong>Lei Wang</strong>, Han Wang, Bin Cui
+      <br>
+      <em>Conceptual Modeling</em> 2018 | <a style="color: #447ec9" href="https://link.springer.com/chapter/10.1007/978-3-030-00847-5_42">paper</a>
+      </p>
+      
+    </ol>
+   </div> -->
+    
+  </div> 
+
+ <!-- <div class="w3-container w3-light-grey w3-padding-32" id="service">
+    <h2>Services</h2>
+      <p><li> Area Chair of <a href="https://icml.cc/Conferences/2023">ICML 2021</a>, <a href="https://nips.cc/Conferences/2022/">NeurIPS 2022</a>, <a href="https://icml.cc/Conferences/2021">ICML 2021</a>, <a href="https://nips.cc/Conferences/2021/">NeurIPS 2021</a>.</p>
+      <p><li> Action Editor of <a href="https://jmlr.org/tmlr/">TMLR</a> (Transactions on Machine Learning Research).</p>
+      <p><li> Senior Program Committee Members of <a href="https://ijcai-21.org/">IJCAI 2021</a>, <a href="https://www.ijcai20.org/">IJCAI 2020</a> and <a href="https://www.ijcai19.org/program-committee.html">IJCAI 2019</a>.</p>
+      <p><li> Journal Reviewers of <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=34">IEEE T-PAMI</a>, <a href="https://www.springer.com/journal/11263">IJCV</a>, <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=83">IEEE T-IP</a>, <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=5962385">IEEE T-NNLS</a>, <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=6046">IEEE T-MM</a>, <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=69">IEEE T-KDE</a>, etc.</p>
+      <p><li> Program Committee Members of ICCV 2021, AAAI 2021, ICLR 2021, NeurIPS 2020, ICML 2020, ECCV 2020, CVPR 2020, ICLR 2020, AAAI 2020, ICCV 2019, CVPR 2019, ICLR 2019, AAAI 2019, IJCAI 2018, AAAI 2018, NeurIPS 2018, etc.</p>
+  </div> -->
+
+  <!-- The Awards Section -->
+  <div class="w3-container w3-padding-32" id="award">
+    <h2>Awards</h2>            
+    <p><li> Doctoral National Scholarship, 2023.10</p>
+    <p><li> "Academic Newcomer" Ph.D. Student Honor Award of UESTC, 2023.04</p>
+    <p><li> ICME Best Student Paper, 2022.07</p>
+    <p><li> "Academic Youth" Postgraduate Student Honor Award of UESTC, 2022.04</p>
+    <p><li> Honor Graduates of UESTC, 2020.06</p>
+  </div>
+
+  <!-- Student Collaboration/Mentoring -->
+  <!-- <div class="w3-container w3-padding-32" id="award">
+    <h2>Student Collaboration/Mentoring</h2>
+  </div>  
+   -->
+
+  <div class="w3-light-grey w3-center w3-padding-24">
+
+    This template borrowed from Lei Wang's website <a href="https://github.com/demoleiwang/HomePage">source code</a>. Many thanks to Lei Wang.
+
+  <!-- Default Statcounter code for Lei Wang's Homepage
+  https://demoleiwang.github.io/HomePage/
+  No.
+  <script type="text/javascript">
+  var sc_project=12347113; 
+  var sc_invisible=0; 
+  var sc_security="21aca5d1"; 
+  var sc_https=1; 
+  var scJsHost = "https://";
+  document.write("<sc"+"ript type='text/javascript' src='" + scJsHost+
+  "statcounter.com/counter/counter.js'></"+"script>");
+  </script> Visitor Since Feb 2022. Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a>
+  <noscript>
+    <div class="statcounter"><a title="Web Analytics Made Easy -
+  StatCounter" href="https://statcounter.com/" target="_blank"><img
+  class="statcounter" src="https://c.statcounter.com/12347113/0/21aca5d1/0/"
+  alt="Web Analytics Made Easy - StatCounter"></a></div>
+  </noscript> -->
+  <!-- End of Statcounter Code -->
+
+  </div>
+
+  <!-- End page content -->
+</div>
+
+<script>
+// Accordion 
+function myAccFunc() {
+  var x = document.getElementById("demoAcc");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+// Click on the "Jeans" link on page load to open the accordion for demo purposes
+document.getElementById("myBtn").click();
 
 
-
-<!-- <p></p><p></p><p></p><p></p><p></p>
-<table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-      <tr>
-        <td width="100%" valign="middle">
-          <heading>Project</heading>
-		  <p>
-		  <div style="text-align: center;">
-		  <img src='project/projects_icon.png'  width="600">
-		  </p>
-          </div>
-        </td>
-      </tr>
-</table> -->
-
-
-
-<p></p><p></p><p></p><p></p><p></p>
-
-   
-<table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-			<tbody><tr>
-				<td>
-				<br>
-				<p align="left"><font size="2">
-				Last updated on March, 2024
-				<p align="middle"><font size="2">
-				This template borrowed from <a href="https://github.com/Wangt-CN/Wangt-CN.github.io">Here</a>. Many thanks to Tan Wang. 
-				</tbody></table>
+// Open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+</script>
 
 </body>
 </html>
