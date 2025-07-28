@@ -1,0 +1,396 @@
+<html>
+<head>
+<title>Generalizable Egocentric Task Verification via Cross-modal Hybrid Hypergraph Matching</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@200&display=swap" rel="stylesheet">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"> -->
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"> -->
+<style type="text/css">
+.content {
+    width:930px;
+    text-align: left;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 200;
+}
+h1 {
+    font-weight: 600;
+}
+table.authors {
+    width:90%;
+    text-align:center;
+}
+table.authors > tr > td, table.authors > tbody > tr > td {
+    width:25%;
+}
+.authors a, .lnk {
+    color:rgb(82, 147, 221);
+    font-size:120%;
+    /* text-decoration:underline; */
+}
+.authors a:hover, .lnk:hover {
+    color:gray;
+    font-size:120%;
+    /* text-decoration:underline; */
+}
+.btn {
+    color:black;
+    text-decoration:none;
+}
+.btn:hover {
+    color:gray;
+    text-decoration:none;
+}
+table.demo1 {
+    width:100%;
+    text-align:center;
+}
+.demo1 img {
+    width:300px;
+}
+td.prompt {
+    width:100%;
+    text-align:center;
+    font-family: monospace;
+    font-size:150%;
+}
+td.prompt a {
+    color:#ddd;
+    text-decoration:none;
+}
+td.prompt a:hover, td.prompt a.active {
+    color:black;
+    text-decoration:none;
+}
+.img-stack {
+    position:relative;
+    display: block;
+    width:300px;
+    height:300px;
+}
+.img-stack img {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 0;
+}
+.img-stack img.active {
+    z-index: 1;
+}
+.img-stack .overlay {
+    width: 300px;
+    height: 300px;
+    opacity: 0;
+    transition: opacity .2s;
+    z-index: 2;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: white;
+}
+.carousel {
+    position:relative;
+    width:650px;
+    height:340px;
+    overflow:hidden;
+}
+.carousel > table {
+    position:absolute;
+    top: 0px;
+    transition: left 1s;
+    width:650px;
+}
+.carousel_table td {
+    text-align:center;
+    font-size: 130%;
+}
+.carousel_table td:nth-child(2) {
+    font-size:150%;
+}
+pre {
+    background-color:#eee;
+    border: 1px solid #999;
+    border-radius: 5px;
+    padding: 10px;
+white-space: break-spaces;
+width:80%;
+text-align:left;
+}
+td.gif {
+    width: 33%;
+    font-family: monospace;
+    font-size: 120%;
+}
+.dl_link {
+    display: inline-block;
+    padding-right: 6px;
+    padding-left: 6px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+.dl_link, .dl_link td {
+    color: black;
+    text-decoration: none;
+    font-size: 120%;
+}
+.dl_link, .dl_link table {
+    border-radius: 5px;
+    background-color: none;
+}
+.dl_link:hover, .dl_link:hover * {
+    color: #404040 !important;
+    background-color: #d9d9d9 !important;
+}
+@media only screen and (max-width: 930px) {
+    .content { width:100% !important; }
+}
+</style>
+<script type="text/javascript">
+  var curr_idx = 0;
+  var num_tables = 3;
+  function move(direction) {
+      if (curr_idx == 0 && direction < 0) {
+	  move(num_tables - 1);
+	  return;
+      }
+      if (curr_idx == num_tables - 1 && direction > 0) {
+	  move(-1 * (num_tables - 1));
+	  return;
+      }
+      tables = document.getElementsByClassName("carousel_table");
+      for(var i = 0; i < tables.length; i++) {
+	  tables[i].style.left = (parseInt(tables[i].style.left.substring(0, tables[i].style.left.length - 2)) - direction * 650).toString() + "px";
+      }
+      curr_idx += direction;
+  }
+  function hideOverlay(classname) {
+      document.getElementById(classname + "_overlay").style.opacity = "0";
+  }
+  function activate(classname, idx, max) {
+      document.getElementById(classname + "_overlay").style.opacity = "1";
+      setTimeout(function() {
+	  for(var i = 1; i <= max; i++) {
+	      document.getElementById(classname + "_" + i.toString()).className = "";
+	      document.getElementById(classname + "_text_" + i.toString()).className = "";
+	  }
+	  document.getElementById(classname + "_" + idx.toString()).className = "active";
+	  document.getElementById(classname + "_text_" + idx.toString()).className = "active";
+	  setTimeout(hideOverlay, 200, classname);
+      }, 200);
+  }
+  var moving = true;
+  var stopCounter = 0;
+  function autoMove(currCounter) {
+      if(moving && currCounter >= stopCounter) {
+	  move(1);
+          setTimeout(autoMove, 5000, stopCounter);
+      }
+  }
+  function beginMoving() {
+      moving = true;
+      setTimeout(autoMove, 5000, stopCounter);
+  }
+  function stopMoving() {
+      moving = false;
+      stopCounter++;
+  }
+</script>
+</head>
+
+<body dir="ltr" onload="beginMoving();">
+<center><div class="content">
+    <!----------------------------------- Title and Authors ----------------------------------->
+    <center>
+      <br>
+      <br>
+      <h1>PHGC: <u>P</u>rocedural <u>H</u>eterogeneous <u>G</u>raph <u>C</u>ompletion for Natural Language Task Verification in Egocentric Videos</h1>
+      <!-- <h1>Generalizable Egocentric Task Verification via Cross-modal Hybrid Hypergraph Matching</h1> -->
+      <table class="authors">
+        <td><span style="font-size: 23px; color:darkred">CVPR 2025 [Accepted]</span></td>
+        <td><span style="font-size: 23px; color:darkred">IEEE TPAMI [Under Review]</span></td>
+      </table>
+      <br>
+      <table class="authors">
+        <tr>
+          <td><a href="https://xunchn.github.io/Homepage/">Xun Jiang</a><sup>1,2</sup></td>
+          <td>Xing Xu</a><sup>1</sup></td>
+          <td>Zheng Wang</a><sup>1</sup></td>
+        </tr>
+        <tr>
+          <td>Jingkuan Song</a><sup>1</sup></td>
+          <td>Fumin Shen</a><sup>2</sup></td>
+          <td>Heng Tao Shen</a><sup>1</sup></td>
+        </tr>
+      </table>
+      <br>
+      <table class="authors">
+        <td><span style="font-size: 19px"><sup>1</sup>Tongji University</span></td>
+        <td><span style="font-size: 19px"><sup>2</sup>University of Electronic Science and Technology of China</span></td>
+      </table>
+      <br>
+      <table class="authors">
+        <td>
+          <a href="https://openaccess.thecvf.com/content/CVPR2025/papers/Jiang_PHGC_Procedural_Heterogeneous_Graph_Completion_for_Natural_Language_Task_Verification_CVPR_2025_paper.pdf"><b>[Conference Paper]</b></a> &nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="https://github.com/XunCHN/PHGC"><b>[Conference Code]</b></a> &nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="https://github.com/XunCHN/PHGC"><b>[Extended Version]</b></a> &nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="https://github.com/XunCHN/PHGC"><b>[EgoCross Dataset]</b></a> &nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+      </table>
+      <br>
+      <br>
+      <br>
+    </center>
+
+    <!----------------------------------- Carousel Demo ----------------------------------->
+    <table class="demo1" onmouseenter="stopMoving();" onmouseleave="beginMoving();">
+      <tr>
+        <td style="width:5%;font-size:150%;" valign="top"><center><div style="height:100px;position:relative;"><a href="#" onclick="move(-1);" class="btn" style="position:absolute;top:120px;">&#9664;</a></div></center></td>
+        <td style="width:100%;">
+          <center>
+            <div class="carousel">
+              <table id="kitchen" class="carousel_table" style="left:0px;">
+                <tr><td><b>Synthetic</b></td><td></td><td><b>Realistic</b></td></tr>
+                <tr>
+                  <td><img src="figures/carousel/kit_sim.png" width="300" height="200"></td>
+                  <td><center>&rightarrow;</center></td>
+                  <td><img src="figures/carousel/kit_real.png" width="300" height="200"></td>
+                </tr>
+                <tr>
+                  <td colspan="3" class="prompt" style="font-size: 22px">"Kitchen: Making Broniew"</td>
+                </tr>
+              </table>
+              <table id="lab" class="carousel_table" style="left:650px;">
+                <tr><td><b>Synthetic</b></td><td></td><td><b>Realistic</b></td></tr>
+                <tr>
+                  <td><img src="figures/carousel/lab_sim.png" width="300" height="200"></td>
+                  <td><center>&rightarrow;</center></td>
+                  <td><img src="figures/carousel/lab_real.png" width="300" height="200"></td>
+                </tr>
+                <tr>
+                  <td colspan="3" class="prompt" style="font-size: 22px">"Lab: Titration"</td>
+                </tr>
+              </table>
+              <table id="daily" class="carousel_table" style="left:1300px;">
+                <tr><td><b>Synthetic</b></td><td></td><td><b>Realistic</b></td></tr>
+                <tr>
+                  <td><img src="figures/carousel/daily_sim.png" width="300" height="200"></td>
+                  <td><center>&rightarrow;</center></td>
+                  <td><img src="figures/carousel/daily_real.png" width="300" height="200"></td>
+                </tr>
+                <tr>
+                  <td colspan="3" class="prompt" style="font-size: 22px">"Daily: Brushing Tooth"</td>
+                </tr>
+              </table>
+
+            </div>
+          </center>
+        </td>
+        <td style="width:5%;font-size:150%;" valign="top"><center><div style="height:100px;position:relative;"><a href="#" onclick="move(1);" class="btn" style="position:absolute;top:120px;">&#9658;</a></div></center></td>
+      </tr>
+    </table>
+
+    <!----------------------------------- Teaser Image ----------------------------------->
+    <div style="text-align: center;">
+      <img src="figures/dataset.png"  style="width:100%;">
+    </div>
+    <br>
+    <p>
+      We propose the Generalizable Egocentric Task Verification (GETV) challenge, which aims at achieving better model performance in the physical world while training models with only data from the digital world.  Particularly, we construct the first egocentric cross-domain benchmark dataset, EgoCross, for synthetic-to-realistic evaluation. Our EgoCross dataset encompasses three different scenes and over 100 procedural tasks, serving as the initial benchmark for the GETV challenge. 
+    </p>
+    <br>
+    
+    <!----------------------------------- Abstract ----------------------------------->
+    <div id="Our Previous PHGC Method" style="border-top:1px solid gray;">
+      <h2>Abstract</h2>
+      <center>
+        <img src="figures/phgc.png" style="width:100%;">
+      </center>
+      <br>
+      <p>
+        Natural Language-based Egocentric Task Verification (NLETV) aims to equip agents to determine if operation flows of procedural tasks in egocentric videos align with natural language instructions. Describing rules with natural language provides generalizable applications, but also raises cross-modal heterogeneity and hierarchical misalignment challenges. In this paper, we proposed a novel approach termed Procedural Heterogeneous Graph Completion (PHGC), which addresses these challenges with heterogeneous graphs representing the logic in rules and operation flows. Specifically, our PHGC method mainly consists of three key components: (1) Heterogeneous Graph Construction module that defines objective states and operation flows as vertices, with temporal and sequential relations as edges. (2) Cross-Modal Path Finding module that aligns semantic relations between hierarchical video and text elements. (3) Discriminative Entity Representation module excavates hidden entities that integrate general logical relations and discriminative cues to reveal final verification results. Additionally, we further constructed a new dataset called CSV-NL comprised of realistic videos. Extensive experiments on the two benchmark datasets covering both digital and physical scenarios, i.e., EgoTV and CSVNL, demonstrate that our proposed PHGC establishes stateof- the-art performance across different settings. 
+      </p>
+    </div>
+    <br>
+
+    <div id="method" style="border-top:1px solid gray;">
+      <h2>Our Extended EgoCross Dataset</h2>
+      <center>
+        <img src="figures/stat.png" style="width:100%;">
+      </center>
+      <br>
+      <p> EgoCross encompasses three distinct real-world application scenarios, i.e., Kitchen Cooking (Kitchen), Laboratory Experiment (Lab), and Daily Living (Daily), to comprehensively evaluate cross-domain NLETV performance. We illustrate the three scenarios of our EgoCross benchmark dataset in Fig. 3. For the Kitchen Cooking scenarios, real-world video-text pairs are curated from the EgoProceL dataset, while synthetic counterparts are extracted from CookingSim gameplay footage. Moreover, the Laboratory Experiment scenarios integrate authentic data from our prior CSV-NL benchmark dataset with procedurally generated sequences from the NoBook experimental simulation platform. Thirdly, the Daily Living leverages real-world footage from the ADL dataset, alongside virtual interactions captured within The Sims gaming environment. We employ 10 volunteers to conduct procedural tasks following the same operational sequence with tasks of realistic data, to collect the synthetic-to-realistic pairwise training and testing data. Each scenario features diverse procedural tasks with multi-step execution sequences. Specifically, kitchen operations include Brownie, Eggs, Pizza, and Salad preparation tasks, each comprising 5-10 steps and 13 distinct execution sequences. The laboratory scenarios cover 13 experimental procedures requiring at least 8 operational steps per task, with 20 variations per experimental sequence. Due to the diversity of simple human activities in human daily life, the Daily Living scenarios encompass 139 routine tasks, each structured with a minimum of 3 operational steps. To enhance linguistic diversity, every execution sequence across all tasks incorporates 10 distinct textual descriptions of operational rules, ensuring robust evaluation of textual grounding capabilities. Furthermore, all scenarios maintain a balanced representation of correct and erroneous operations at a 1:1 ratio, providing critical evaluation dimensions for failure mode analysis in cross-domain transfer learning.
+      </p>
+    </div>
+    <br>
+
+
+    <div id="method" style="border-top:1px solid gray;"></div>
+      <h2>Evaluated on Macro-F1</h2>
+      <center>
+        <img src="figures/results.png" style="width:100%;">
+      </center>
+      <br>
+      <p> To holistically assess model robustness across diverse scenarios, especially given varying positive and negative sample ratios in the test
+        splits, we adopt Macro-F1 as our primary metric, which comprehensively indicates the performance to verify if a complex task is completed following the given text rules. 
+      </p>
+    </div>
+    <br>
+
+    <div id="examples_kitchen" style="border-top:1px solid gray;">
+      <h2>Kitchen</h2>
+      <!-- <center>
+        <img src="figures/kit.gif" loop="infinite" autoplay>
+      </center> -->
+      <center>
+        <video controls="controls" width="720" autoplay>
+          <source src="figures/Kit_Demo.mp4" type="video/mp4">
+        </video>
+      </center>
+    </div>
+    <br>
+    
+
+    <div id="examples_lab" style="border-top:1px solid gray;">
+      <h2>Lab</h2>
+      <center>
+        <!-- <img src="figures/lab.gif" loop="infinite" autoplay> -->
+        <video controls="controls" width="720" autoplay>
+          <source src="figures/Lab_Demo.mp4" type="video/mp4">
+        </video>
+      </center>
+    </div>
+    <br>
+
+
+    <div id="examples_daily" style="border-top:1px solid gray;"></div>
+      <h2>Daily</h2>
+      <center>
+        <!-- <img src="figures/daily.gif" loop="infinite" autoplay> -->
+        <video controls="controls" width="720" autoplay>
+          <source src="figures/Daily_Demo.mp4" type="video/mp4">
+        </video>
+      </center>
+    </div>
+    <br>
+
+    <!----------------------------------- Bibtex ----------------------------------->
+    <div id="bibtex" style="border-top:1px solid gray;">
+      <h2>BibTeX</h2>
+      <center>
+      <pre><code>@inproceedings{jiang2025phgc,
+        title={PHGC: Procedural Heterogeneous Graph Completion for Natural Language Task Verification in Egocentric Videos},
+        author={Jiang, Xun and Huang, Zhiyi and Xu, Xing and Song, Jingkuan and Shen, Fumin and Shen, Heng Tao},
+        booktitle={Proceedings of the Computer Vision and Pattern Recognition Conference},
+        pages={8615--8624},
+        year={2025}
+      }
+      </code></pre>
+      </center>
+    </div>
+
+</div></center>
+
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</body>
+</html>
